@@ -13,7 +13,8 @@ ports:
 
 tasks:
   - name: Forem Server
-    before: |
+    before: >
+      pg_start > /dev/null
       redis-server &
     init: >
       cp .env_sample .env &&
